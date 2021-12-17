@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="true"
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="Unit">
+            <directory suffix="Test.php">./tests/Unit</directory>
+        </testsuite>
+
+        <testsuite name="Feature">
+            <directory suffix="Test.php">./tests/Feature</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app</directory>
+        </whitelist>
+    </filter>
+    <php>
+        <server name="APP_ENV" value="testing"/>
+        <server name="BCRYPT_ROUNDS" value="4"/>
+        <server name="CACHE_DRIVER" value="array"/>
+        <server name="DB_CONNECTION" value="mysql"/>
+        <server name="DB_HOST" value="crm-test-mysql"/>
+        <server name="DB_DATABASE" value="app"/>
+        <server name="DB_PORT" value="3306"/>
+        <server name="DB_USERNAME" value="app"/>
+        <server name="DB_PASSWORD" value="secret"/>
+        <server name="KEY_PATH" value="/app/storage/secret-keys/oauth/test"/>
+        <server name="ACCESS_TOKEN" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZWUzYzU3Y2MwMTI4NjU2ZDVlMzdhNjJjY2NmYjM3OWY0NDY5NDhmMGUyZjFiNjMwYWI1MGVlNmYwOWY5OTVjNjcxNTY0NDI3MjI4OGYwYzkiLCJpYXQiOjE1ODIxODE3MjgsIm5iZiI6MTU4MjE4MTcyOCwiZXhwIjoxNjEzNzE3NzI3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.OupMsUYcZdYVklDRnRwR1bYGnQbD2e2xnouoZhJ9WdtkMQsShDpJiNrpujAW52E56XPzm7DiyZON8pPA7kkIrMFDgWYwSvn1n60ve77bmAAMdnMJKDzLCh1sWv_ZpugVeUHKFieGOhhQel4ELuzYh9nscPyLSIT-7V-TPTWphiDOmN7vItYId0g3dl6S9oVIvflxP5t5zK0oExTp2cctcb6NZ28zHjvHYyT7NO6pvs1KJS8sHs2GKS-JIblZFEUm6jjGjw0c-SACdTqK47Bp9h56S9LeZjbiS6_ergFLjAnaLLWxMidYl_GH8VboRc-tyRU0lPiBsdVJN9EVyv7snwN-rjWslqCeh5pjzkMTxNgMKmuMVVHSIUHI4imqNlE357zDhr9kkhVlSTj9mVm0TsNkPv0AgNym6qA0m22jJzAK86_-hrGRPBvPHbdjD4VAIU5hUOSD68rNSn0hcn12D4XgJjEdZvwGH6BXxUi3xnrYjDLDtd_-FGYQxIeY-YAEyU6H4tPF7BohPW8AZAIrITI7OXasjD9Fww0dAC9WJVbGMxf7Pi4ypfIMshHM-nwARAL5ZsyAzCQsnePXJ6LTPqKYWHPJHRqFg7Ov1hioIbgDBWCIDi_vmlubiz5G_3Js0C_aGXn374rFVs2CE2i_ernjws6lA67JRS5VgiD4H1w"/>
+        <server name="MAIL_DRIVER" value="array"/>
+        <server name="QUEUE_CONNECTION" value="sync"/>
+        <server name="SESSION_DRIVER" value="array"/>
+        <server name="TELESCOPE_ENABLED" value="false"/>
+    </php>
+</phpunit>
